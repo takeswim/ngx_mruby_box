@@ -15,6 +15,7 @@ redis    = userdata.redis
 
 v        = Server::Var.new
 r        = Server::Request.new
+c        = Server::Connection.new
 
 ## allow / deny処理
 flg_allow = false

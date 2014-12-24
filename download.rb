@@ -8,7 +8,7 @@ v        = Server::Var.new
 filename = redis.get("DBX:"+v.arg_key+":filename")
 if (filename)
   ## ファイルがあれば、指定されたファイル名を元に配信
-  hout = Server.Headers_out.new
+  hout = Server::Headers_out.new
   Server.echo redis.get("DBX:"+v.arg_key+":body")
   hout['Content-Disposition'] = 'attachment; filename="'+filename+'"'
   Server::return Server::HTTP_OK
